@@ -7,7 +7,7 @@ function Footer(props) {
     
     return (
         <div className="row mt-3">
-            <footer className="col-3 footer" style={{ marginLeft: "auto", marginRight: "auto" }}>{ooterTxt}</footer>
+            <footer className="col-3 footer" style={{ marginLeft: "auto", marginRight: "auto" }}>{footerTxt}</footer>
         </div>)  
 }
 export default Footer;
