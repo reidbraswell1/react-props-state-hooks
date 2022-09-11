@@ -7,12 +7,15 @@ import Footer from "./components/Footer.jsx";
 
 function App(props) {
 
-    const [ list, setList ] = useState("ready", "set", "GO");
+    console.log(`---Begin function App()---`);
+
+    const [ list, setList ] = useState(["ready", "set", "GO"]);
     const [ text, setText ] = useState("");
 
     useEffect(function () {
-
-    })
+      console.log(`---Begin useEffect()---`);
+      console.log(`---End useEffect()---`);
+    },[])
 
   // Input onChange event handler
   function handleOnChangeInput(event) {
@@ -69,7 +72,7 @@ function App(props) {
   return (
     <div className="row">
       <div className="col text-center mt-3">
-        <h1>React State and Props</h1>
+        <h1>React State and Props Hooks</h1>
       </div>
       <div className="row">
         <div className="col-3" style={{ marginLeft: 'auto', marginRight: 'auto'}}>
@@ -92,7 +95,7 @@ function App(props) {
       <div className="row">
         <div className="col-3 border border-primary rounded mt-4" style={{ marginLeft: 'auto', marginRight: 'auto'}}>
           <ul className="list-group mt-2 mb-2">
-            {this.state.list.map((value,index, array) => {
+            {list.map((value,index, array) => {
               let listId = `List:${index}`;
               let listText = `(${index+1}.) ${value}`;
               return <List key={index} id={listId} text={listText}></List>
