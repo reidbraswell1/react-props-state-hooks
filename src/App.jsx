@@ -41,6 +41,7 @@ function App(props) {
           console.log(`Empty String`);
         }
         else {
+          console.log(`**** Add value =  (${text}) ****`);
           // Must use a new array
           let newList = list.slice(0);
           newList.push(text);
@@ -56,6 +57,7 @@ function App(props) {
           console.log(`Empty String`);
         }
         else {
+          console.log(`**** Delete value =  (${text}) ****`)
           let newList = [];
           let deleteIndex = parseInt(text);
           for(let i=0; i < list.length; i++) {
