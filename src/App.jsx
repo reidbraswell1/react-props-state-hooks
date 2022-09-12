@@ -11,11 +11,14 @@ function App(props) {
 
     const [ list, setList ] = useState(["ready", "set", "GO"]);
     const [ text, setText ] = useState("");
+    const [ prevText, setPrevText ] = useState("");
 
     useEffect(function () {
       console.log(`---Begin useEffect()---`);
+      console.log(`Prev Text = ${prevText}, Curr Text = ${text}`);
+      setPrevText(text);
       console.log(`---End useEffect()---`);
-    },[])
+    },[text])
 
   // Input onChange event handler
   function handleOnChangeInput(event) {
@@ -63,7 +66,7 @@ function App(props) {
         }
         break; 
       default: 
-        console.log(`Invalid Button value ${buttonValue}`);
+        console.log(`Invalid Button value = ${buttonValue}`);
         break;
     }
     console.log(`---End onSubmit()---`);
