@@ -36,6 +36,7 @@ function App(props) {
     switch (buttonValue) {
       case "Add":
         // Don't process empty string
+        console.log(`***Begin ${buttonValue} Case***`);
         if (!text || text.length === 0) {
           console.log(`Empty String`);
         }
@@ -47,8 +48,10 @@ function App(props) {
           setList(newList);
           setText("");
         }
+        console.log(`***End ${buttonValue} Case***`);
         break;
       case "Delete":
+        console.log(`***Begin ${buttonValue} Case***`);
         if(!text || text.length === 0) {
           console.log(`Empty String`);
         }
@@ -64,9 +67,12 @@ function App(props) {
           setList(newList);
           setText("");
         }
+        console.log(`***End ${buttonValue} Case***`);
         break; 
-      default: 
+      default:
+        console.log(`***Begin Default ${buttonValue} Case***`);
         console.log(`Invalid Button value = ${buttonValue}`);
+        console.log(`***End Default ${buttonValue} Case***`);
         break;
     }
     console.log(`---End onSubmit()---`);
@@ -78,7 +84,7 @@ function App(props) {
         <h1>React State and Props Hooks</h1>
       </div>
       <div className="row">
-        <div className="col-3" style={{ marginLeft: 'auto', marginRight: 'auto'}}>
+        <div className="col-3 my-margin">
           <form onClick={onSubmit}>
           <p>To delete an item enter it's number only!</p>
             <div className="form-group">
@@ -96,14 +102,8 @@ function App(props) {
         </div>
       </div>
       <div className="row">
-        <div className="col-3 border border-primary rounded mt-4" style={{ marginLeft: 'auto', marginRight: 'auto'}}>
-          <ul className="list-group mt-2 mb-2">
-            {list.map((value,index, array) => {
-              let listId = `List:${index}`;
-              let listText = `(${index+1}.) ${value}`;
-              return <List key={index} id={listId} text={listText}></List>
-            })}
-          </ul>
+        <div className="col-3 border border-primary rounded mt-4 my-margin">
+          <List list={list}></List>
         </div>
       </div>
       <Footer></Footer>
