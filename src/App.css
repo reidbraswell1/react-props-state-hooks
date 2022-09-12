@@ -2,3 +2,8 @@
   color: green;
   font-size: .8rem;
 }
+
+.my-margin {
+  margin-left: auto;
+  margin-right: auto;
+}
